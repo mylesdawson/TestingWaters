@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">TestingWaters</string>
+    <string name="login">Login</string>
+    <string name="setup">Set Up</string>
+    <string name="resources">Resources</string>
+    <string name="hello_world">Hello World</string>
+    <string name="first_name">Please enter your first name</string>
+    <string name="last_name">Please enter your last name</string>
+    <string name="student_id">Please enter your student number</string>
+    <string name="sign_in">Sign In</string>
+    <string name="success">Login Success!</string>
+    <string name="failure">Login Failed!</string>
+
+    <!--Resources used-->
+    <string name="hyperlinkText">https://material.io/guidelines/material-design/introduction.html</string>
+    <string name="hyperlinkText2">https://developer.android.com/reference/android/widget/TextView.html</string>
+
+</resources>
