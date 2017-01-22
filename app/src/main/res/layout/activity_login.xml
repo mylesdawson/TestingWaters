@@ -40,11 +40,21 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center" />
 
-    <TextView
-        android:paddingTop="16dp"
-        android:id="@+id/welcome_text"
-        android:layout_width="wrap_content"
+    <Button
+        android:layout_marginTop="16dp"
+        style="@style/ButtonTheme"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"/>
+        android:text="@string/save_login_info"
+        android:onClick="saveLoginInfo"/>
+
+    <Button
+        android:layout_marginTop="16dp"
+        style="@style/ButtonTheme"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/load_login_info"
+        android:onClick="loadLoginInfo"/>
+
 
 </LinearLayout>

@@ -10,6 +10,8 @@
     <string name="sign_in">Sign In</string>
     <string name="success">Login Success!</string>
     <string name="failure">Login Failed!</string>
+    <string name="save_login_info">Save Login Info</string>
+    <string name="load_login_info">Load Login Info</string>
 
     <!--Resources used-->
     <string name="hyperlinkText">https://material.io/guidelines/material-design/introduction.html</string>
