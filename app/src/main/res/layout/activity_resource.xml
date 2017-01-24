@@ -28,4 +28,24 @@
         android:autoLink="web"
         android:textColor="@color/colorWhite"/>
 
+    <TextView
+        android:textSize="16dp"
+        android:padding="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/grand_canyon"
+        android:gravity="center"
+        android:autoLink="web"
+        android:textColor="@color/colorWhite"/>
+
+    <TextView
+        android:textSize="16dp"
+        android:padding="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tulum_ruins"
+        android:gravity="center"
+        android:autoLink="web"
+        android:textColor="@color/colorWhite"/>
+
 </LinearLayout>

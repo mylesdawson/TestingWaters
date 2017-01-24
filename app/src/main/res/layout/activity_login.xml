@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.myles.testingwaters.LoginActivity">
+    tools:context="com.example.myles.testingwaters.LoginActivity"
+    android:background="@color/colorLight">
 
     <EditText
         android:id="@+id/first_name"

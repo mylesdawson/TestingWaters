@@ -1,5 +1,6 @@
 package com.example.myles.testingwaters;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -17,6 +18,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+import static android.R.attr.id;
 import static android.R.id.message;
 
 public class LoginActivity extends AppCompatActivity {
@@ -34,7 +36,7 @@ public class LoginActivity extends AppCompatActivity {
 
     // Determines if login is success or failure
     public void validateLogin(View view){
-        // TODO: figure out why i have to put these EDITTEXT into every function and why they wont work as a global variables \0.0\
+        // TODO: figure out why I have to put these EDITTEXT into every function and why they wont work as a global variables \0.0\
         EditText firstNameText = (EditText) findViewById(R.id.first_name);
         EditText lastNameText = (EditText) findViewById(R.id.last_name);
         EditText studentIdText = (EditText) findViewById(R.id.student_id);
@@ -55,6 +57,8 @@ public class LoginActivity extends AppCompatActivity {
             textView.setText(R.string.success);
             textView.setTextColor(getResources().getColor(R.color.success));
             Toast.makeText(this, "Welcome " + lastNameInput.toLowerCase() + "! Now learning begins", Toast.LENGTH_LONG).show();
+            Intent intent = new Intent(this, AboutActivity.class);
+            startActivity(intent);
         }
     }
 
@@ -66,6 +70,7 @@ public class LoginActivity extends AppCompatActivity {
         return false;
     }
 
+    // Saves user login info to internal storage (filename: saved_credentials)
     public void saveLoginInfo(View view){
         EditText firstNameText = (EditText) findViewById(R.id.first_name);
         EditText lastNameText = (EditText) findViewById(R.id.last_name);
@@ -77,9 +82,8 @@ public class LoginActivity extends AppCompatActivity {
             FileOutputStream fileOutputStream = openFileOutput(fileName, MODE_PRIVATE);
             fileOutputStream.write(message.getBytes());
             fileOutputStream.close();
+            hideText(firstNameText, lastNameText, studentIdText);
             Toast.makeText(getApplicationContext(), "Credentials saved successfully!", Toast.LENGTH_SHORT).show();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -90,17 +94,18 @@ public class LoginActivity extends AppCompatActivity {
         EditText firstNameText = (EditText) findViewById(R.id.first_name);
         EditText lastNameText = (EditText) findViewById(R.id.last_name);
         EditText studentIdText = (EditText) findViewById(R.id.student_id);
-        int currentLine = 0;
         try {
-            int bufferLength = 0;
+            int currentLine = 0;
+            int bufferLength;
             int bufferDifference = 0;
             String message;
+
             FileInputStream fileInputStream = openFileInput("saved_credentials");
             InputStreamReader inputStreamReader = new InputStreamReader(fileInputStream);
             BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
             StringBuilder stringBuilder = new StringBuilder();
+
             while((message = bufferedReader.readLine()) != null){
-                Log.d("nice", "message is: " + stringBuilder);
                 stringBuilder.append(message);
                 bufferLength = stringBuilder.length();
                 if(currentLine == 0) {
@@ -117,14 +122,15 @@ public class LoginActivity extends AppCompatActivity {
                     studentIdText.setText(stringBuilder.toString());
                 }
             }
-            Log.d("nice", "stringBuilder is: " + stringBuilder);
             Toast.makeText(getApplicationContext(), "Credentials loaded successfully", Toast.LENGTH_SHORT).show();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
 
-
+    public void hideText(EditText firstName, EditText lastName, EditText studentId){
+        firstName.setText("");
+        lastName.setText("");
+        studentId.setText("");
     }
 }
