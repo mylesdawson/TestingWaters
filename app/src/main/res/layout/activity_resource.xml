@@ -11,7 +11,7 @@
     <TextView
         android:textSize="16dp"
         android:padding="16dp"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/hyperlinkText"
         android:gravity="center"
@@ -21,7 +21,7 @@
     <TextView
         android:textSize="16dp"
         android:padding="16dp"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/hyperlinkText2"
         android:gravity="center"
@@ -31,21 +31,13 @@
     <TextView
         android:textSize="16dp"
         android:padding="16dp"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/grand_canyon"
+        android:text="@string/hyperlinkText3"
         android:gravity="center"
         android:autoLink="web"
         android:textColor="@color/colorWhite"/>
 
-    <TextView
-        android:textSize="16dp"
-        android:padding="16dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/tulum_ruins"
-        android:gravity="center"
-        android:autoLink="web"
-        android:textColor="@color/colorWhite"/>
+
 
 </LinearLayout>

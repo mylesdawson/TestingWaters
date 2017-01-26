@@ -21,7 +21,12 @@
     <!--Resources used-->
     <string name="hyperlinkText">https://material.io/guidelines/material-design/introduction.html</string>
     <string name="hyperlinkText2">https://developer.android.com/reference/android/widget/TextView.html</string>
-    <string name="tulum_ruins">https://39ag5r37ej175g8ao209xw3t-wpengine.netdna-ssl.com/wp-content/uploads/2016/01/Mexico_-mayan_ruin_Tulum-200x200.jpg</string>
-    <string name="grand_canyon">https://greenlivingaz.com/wp-content/uploads/2016/09/Grand-Canyon-200x200.png</string>
+    <string name="hyperlinkText3">http://stackoverflow.com/</string>
+
+    <!-- Names of locations -->
+    <string name="the_grand_canyon">The Grand Canyon, Arizona</string>
+    <string name="the_tulum_ruins">Tulum Ruins, Mexico</string>
+    <string name="yellowstone_park">Yellowstone National Park, Wyoming</string>
+    <string name="kokanee_cabin">Kokanee Glacier Cabin, BC</string>
 
 </resources>
