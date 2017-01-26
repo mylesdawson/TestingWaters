@@ -9,18 +9,18 @@
     tools:context="com.example.myles.testingwaters.MainActivity">
 
     <Button
+        android:id="@+id/setup_btn"
         style="@style/ButtonTheme"
         android:layout_marginTop="32dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/setup"
-        android:onClick="setupLaunch"/>
+        android:text="@string/setup" />
 
     <Button
+        android:id="@+id/login_btn"
         style="@style/ButtonTheme"
         android:layout_marginTop="16dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/login"
-        android:onClick="loginLaunch"/>
+        android:text="@string/login" />
 </LinearLayout>

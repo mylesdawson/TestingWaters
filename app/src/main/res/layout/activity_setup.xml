@@ -16,11 +16,11 @@
         android:text="@string/hello_world"/>
 
     <Button
+        android:id="@+id/resource_btn"
         android:layout_marginTop="32dp"
         style="@style/ButtonTheme"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/resources"
-        android:onClick="resourceLaunch"/>
+        android:text="@string/resources"/>
 
 </LinearLayout>

@@ -30,9 +30,9 @@ public class LoginActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        firstNameText = (EditText)findViewById(R.id.first_name);
-        lastNameText = (EditText)findViewById(R.id.last_name);
-        studentIdText = (EditText)findViewById(R.id.student_id);
+        firstNameText = (EditText) findViewById(R.id.first_name);
+        lastNameText = (EditText) findViewById(R.id.last_name);
+        studentIdText = (EditText) findViewById(R.id.student_id);
     }
 
     // Determines if login is success or failure
