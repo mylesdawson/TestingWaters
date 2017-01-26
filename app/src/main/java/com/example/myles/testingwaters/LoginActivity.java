@@ -1,5 +1,6 @@
 package com.example.myles.testingwaters;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -21,25 +22,29 @@ import java.io.InputStreamReader;
 import static android.R.attr.id;
 import static android.R.id.message;
 
-public class LoginActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity{
 
     // Sets login credentials
     private String firstName = "myles";
     private String lastName = "dawson";
     private String studentId = "301263491";
 
+    private EditText firstNameText;
+    private EditText lastNameText;
+    private EditText studentIdText;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        firstNameText = (EditText)findViewById(R.id.first_name);
+        lastNameText = (EditText)findViewById(R.id.last_name);
+        studentIdText = (EditText)findViewById(R.id.student_id);
     }
 
     // Determines if login is success or failure
     public void validateLogin(View view){
-        // TODO: figure out why I have to put these EDITTEXT into every function and why they wont work as a global variables \0.0\
-        EditText firstNameText = (EditText) findViewById(R.id.first_name);
-        EditText lastNameText = (EditText) findViewById(R.id.last_name);
-        EditText studentIdText = (EditText) findViewById(R.id.student_id);
 
         String firstNameInput = firstNameText.getText().toString();
         String lastNameInput = lastNameText.getText().toString();
@@ -71,10 +76,8 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     // Saves user login info to internal storage (filename: saved_credentials)
+    // This is not recommended in general
     public void saveLoginInfo(View view){
-        EditText firstNameText = (EditText) findViewById(R.id.first_name);
-        EditText lastNameText = (EditText) findViewById(R.id.last_name);
-        EditText studentIdText = (EditText) findViewById(R.id.student_id);
 
         String message = firstNameText.getText().toString() + "\n" + lastNameText.getText().toString() + "\n" + studentIdText.getText().toString();
         String fileName = "saved_credentials";
@@ -91,9 +94,6 @@ public class LoginActivity extends AppCompatActivity {
 
     // Some advanced wizardry going on here
     public void loadLoginInfo(View view){
-        EditText firstNameText = (EditText) findViewById(R.id.first_name);
-        EditText lastNameText = (EditText) findViewById(R.id.last_name);
-        EditText studentIdText = (EditText) findViewById(R.id.student_id);
         try {
             int currentLine = 0;
             int bufferLength;
@@ -133,4 +133,5 @@ public class LoginActivity extends AppCompatActivity {
         lastName.setText("");
         studentId.setText("");
     }
+
 }
