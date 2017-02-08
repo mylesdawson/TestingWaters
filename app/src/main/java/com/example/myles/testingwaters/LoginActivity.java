@@ -1,6 +1,7 @@
 package com.example.myles.testingwaters;
 
 import android.content.Intent;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -33,6 +34,9 @@ public class LoginActivity extends AppCompatActivity{
         firstNameText = (EditText) findViewById(R.id.first_name);
         lastNameText = (EditText) findViewById(R.id.last_name);
         studentIdText = (EditText) findViewById(R.id.student_id);
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
     }
 
     // Determines if login is success or failure
