@@ -1,19 +1,12 @@
 package com.example.myles.testingwaters;
 
 import android.content.Intent;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import java.io.BufferedReader;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
 
 public class LoginActivity extends AppCompatActivity{
 
@@ -46,7 +39,7 @@ public class LoginActivity extends AppCompatActivity{
         String lastNameInput = lastNameText.getText().toString();
         String studentIdInput = studentIdText.getText().toString();
 
-        TextView textView = (TextView) findViewById(R.id.result_message);
+        TextView textView = (TextView) findViewById(R.id.warning_message);
         Boolean firstNameCheck = checkLogin(firstNameInput, firstName);
         Boolean lastNameCheck = checkLogin(lastNameInput, lastName);
         Boolean studentIdCheck = checkLogin(studentIdInput, studentId);

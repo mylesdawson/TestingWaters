@@ -53,8 +53,11 @@
     <string name="triangle_game_btn">Triangle Game</string>
 
     <!-- Square Activity -->
-    <string name="square_game_hint">Enter the number of squares to be drawn: </string>
+    <string name="square_game_hint">Enter a number</string>
     <string name="submit_square">Submit</string>
+
+    <!-- Signup Activity-->
+    <string name="please_enter_your_password">Please enter your password</string>
 
 
 </resources>
