@@ -32,7 +32,8 @@ public class FlowActivity extends AppCompatActivity {
         mainMenuBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(getApplicationContext(), MenuActivity.class);
+                startActivity(intent);
             }
         });
 

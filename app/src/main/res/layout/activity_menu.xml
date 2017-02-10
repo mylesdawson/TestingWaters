@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_menu"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:orientation="vertical"
+    android:background="@color/colorLight"
+    tools:context="com.example.myles.testingwaters.MenuActivity">
+
+    <Button
+        android:id="@+id/square_btn"
+        style="@style/ButtonTheme"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/square_game_btn"/>
+
+    <Button
+        android:id="@+id/triangle_btn"
+        android:layout_marginTop="16dp"
+        style="@style/ButtonTheme"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/triangle_game_btn"/>
+
+</LinearLayout>

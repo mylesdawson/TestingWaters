@@ -48,4 +48,13 @@
     <string name="triangle_game_description">In this game</string>
     <string name="images_and_resources">Images and Resources Used</string>
 
+    <!-- Menu Activity -->
+    <string name="square_game_btn">Square Game</string>
+    <string name="triangle_game_btn">Triangle Game</string>
+
+    <!-- Square Activity -->
+    <string name="square_game_hint">Enter the number of squares to be drawn: </string>
+    <string name="submit_square">Submit</string>
+
+
 </resources>
