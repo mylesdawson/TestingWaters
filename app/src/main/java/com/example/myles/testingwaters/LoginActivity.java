@@ -1,9 +1,11 @@
 package com.example.myles.testingwaters;
 
 import android.content.Intent;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -18,22 +20,36 @@ public class LoginActivity extends AppCompatActivity{
     private EditText firstNameText;
     private EditText lastNameText;
     private EditText studentIdText;
+    private EditText passwordText;
+    private Button signInBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        firstNameText = (EditText) findViewById(R.id.first_name);
-        lastNameText = (EditText) findViewById(R.id.last_name);
-        studentIdText = (EditText) findViewById(R.id.student_id);
+        firstNameText = (EditText) findViewById(R.id.login_first_name);
+        lastNameText = (EditText) findViewById(R.id.login_last_name);
+        studentIdText = (EditText) findViewById(R.id.login_student_id);
+        passwordText = (EditText)findViewById(R.id.login_password);
 
-/*        ActionBar actionBar = getSupportActionBar();
-        actionBar.setDisplayHomeAsUpEnabled(true);*/
+        signInBtn = (Button)findViewById(R.id.sign_in_btn);
+
+        signInBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                validateLogin();
+            }
+        });
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
+
+
     }
 
     // Determines if login is success or failure
-    public void validateLogin(View view){
+    public void validateLogin(){
 
         String firstNameInput = firstNameText.getText().toString();
         String lastNameInput = lastNameText.getText().toString();

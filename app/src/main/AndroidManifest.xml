@@ -17,14 +17,30 @@
         </activity>
         <activity android:name=".SetupActivity" />
         <activity android:name=".ResourceActivity" />
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".GalleryActivity" />
-        <activity android:name=".SignUpActivity" />
-        <activity android:name=".FlowActivity" />
-        <activity android:name=".HelpActivity" />
-        <activity android:name=".MenuActivity" />
-        <activity android:name=".SquareActivity" />
-        <activity android:name=".TriangleActivity"></activity>
+        <activity android:name=".LoginActivity"
+            android:parentActivityName=".EntryActivity"
+            android:label="Login"/>
+        <activity android:name=".GalleryActivity"
+            android:parentActivityName=".FlowActivity"
+            android:label="Gallery"/>
+        <activity android:name=".SignUpActivity"
+            android:parentActivityName=".EntryActivity"
+            android:label="Sign Up"/>
+        <activity android:name=".FlowActivity"
+            android:parentActivityName=".LoginActivity"
+            android:label="Flow"/>
+        <activity android:name=".HelpActivity"
+            android:parentActivityName=".FlowActivity"
+            android:label="Help"/>
+        <activity android:name=".MenuActivity"
+            android:parentActivityName=".FlowActivity"
+            android:label="Game Menu"/>
+        <activity android:name=".SquareActivity"
+            android:parentActivityName=".MenuActivity"
+            android:label="Square Game"/>
+        <activity android:name=".TriangleActivity"
+            android:parentActivityName=".MenuActivity"
+            android:label="Triangle Game"/>
     </application>
 
 </manifest>

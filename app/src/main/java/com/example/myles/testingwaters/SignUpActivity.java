@@ -1,12 +1,14 @@
 package com.example.myles.testingwaters;
 
 import android.database.Cursor;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class SignUpActivity extends AppCompatActivity {
 
@@ -24,6 +26,9 @@ public class SignUpActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
 
         registerBtn = (Button)findViewById(R.id.register_btn);
         firstNameTxt = (EditText)findViewById(R.id.signup_first_name);
@@ -57,14 +62,17 @@ public class SignUpActivity extends AppCompatActivity {
         registerBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                boolean testResult = testInput();
-                if(testResult){
-                    displayError("");
-                    String firstName = firstNameTxt.getText().toString();
-                    String lastName = lastNameTxt.getText().toString();
-                    int id = Integer.parseInt(studentId.getText().toString());
-                    String pass = password.getText().toString();
-                    addRecord(firstName, lastName, id, pass);
+                String firstName = firstNameTxt.getText().toString();
+                String lastName = lastNameTxt.getText().toString();
+                String id = studentId.getText().toString();
+                String pass = password.getText().toString();
+
+                UserInputTester inputTester = new UserInputTester(firstName, lastName, id, pass, warningMsg);
+                if(inputTester.testInput()){
+                    Toast.makeText(getApplicationContext(),"Login info saved!", Toast.LENGTH_LONG).show();
+                    inputTester.displayError("");
+                    int parseId = Integer.parseInt(id);
+                    addRecord(firstName, lastName, parseId, pass);
                 }
             }
         });
@@ -84,67 +92,11 @@ public class SignUpActivity extends AppCompatActivity {
         });
     }
 
-    private void displayError(String errorMsg) {
-        warningMsg.setVisibility(View.VISIBLE);
-        warningMsg.setText(errorMsg);
-        warningMsg.postDelayed(new Runnable(){
-            @Override
-            public void run()
-            {
-                warningMsg.setVisibility(View.INVISIBLE);
-            }
-        }, 5000);
-    }
-
-    // TODO: move this code to separate class!!
-    private boolean testInput() {
-        // If any of the input fields are empty return false
-        String firstName = firstNameTxt.getText().toString();
-        String lastName = lastNameTxt.getText().toString();
-        String id = studentId.getText().toString();
-        String pass = password.getText().toString();
-
-        if(firstName.equalsIgnoreCase("") || lastName.equalsIgnoreCase("") ||
-                id.equalsIgnoreCase("") || pass.equalsIgnoreCase("") ) {
-            displayError("One or more fields left blank");
-            return false;
-        }
-
-        // Test password: whitespace
-        if(pass.contains(" ")){
-            displayError("No whitespace allowed in password");
-            return false;
-        }
-
-        // Test password: at least 1 uppercase letter, at least 1 number, len = 6
-        int passwordLen = 6;
-        if(pass.length() < passwordLen || pass.length() > passwordLen){
-            displayError("Password must be exactly 6 characters long");
-            return false;
-        }
-
-        if(!(pass.matches(".*\\d+.*"))) {
-            displayError("Password does not contain a number");
-            return false;
-        }
-
-        // set to false if password does not contain an uppercase letter
-        boolean hasUppercase = !pass.equals(pass.toLowerCase());
-        if(!hasUppercase){
-            displayError("Password does not contain an uppercase letter");
-            return false;
-        }
-
-        return true;
-    }
-
-
     private void displayText(String message) {
         final TextView textView = (TextView) findViewById(R.id.display_database);
         textView.setText(message);
 
     }
-
 
     public void addRecord(String firstName, String lastName, int id, String password) {
         displayText("Clicked add record!");
