@@ -50,7 +50,7 @@ public class DBAdapter {
     public static final String DATABASE_NAME = "MyDb";
     public static final String DATABASE_TABLE = "mainTable";
     // Track DB version if a new version of your app changes the format.
-    public static final int DATABASE_VERSION = 2;
+    public static final int DATABASE_VERSION = 3;
 
     private static final String DATABASE_CREATE_SQL =
             "create table " + DATABASE_TABLE
@@ -69,7 +69,7 @@ public class DBAdapter {
                     + KEY_FIRSTNAME + " text not null, "
                     + KEY_LASTNAME + " text not null, "
                     + KEY_STUDENTNUM + " integer not null,"
-                    + KEY_PASSWORD + " integer not null"
+                    + KEY_PASSWORD + " text not null"
 
                     // Rest  of creation:
                     + ");";
@@ -101,7 +101,7 @@ public class DBAdapter {
     }
 
     // Add a new set of values to the database.
-    public long insertRow(String name, String lastName, int studentNum, int password) {
+    public long insertRow(String name, String lastName, int studentNum, String password) {
 		/*
 		 * CHANGE 3:
 		 */
@@ -158,7 +158,7 @@ public class DBAdapter {
     }
 
     // Change an existing row to be equal to new data.
-    public boolean updateRow(long rowId, String name, String lastName, int studentNum, int password) {
+    public boolean updateRow(long rowId, String name, String lastName, int studentNum, String password) {
         String where = KEY_ROWID + "=" + rowId;
 
 		/*

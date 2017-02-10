@@ -63,10 +63,9 @@ public class SignUpActivity extends AppCompatActivity {
                     String firstName = firstNameTxt.getText().toString();
                     String lastName = lastNameTxt.getText().toString();
                     int id = Integer.parseInt(studentId.getText().toString());
-                    int pass = Integer.parseInt(password.getText().toString());
+                    String pass = password.getText().toString();
                     addRecord(firstName, lastName, id, pass);
                 }
-
             }
         });
 
@@ -86,9 +85,18 @@ public class SignUpActivity extends AppCompatActivity {
     }
 
     private void displayError(String errorMsg) {
+        warningMsg.setVisibility(View.VISIBLE);
         warningMsg.setText(errorMsg);
+        warningMsg.postDelayed(new Runnable(){
+            @Override
+            public void run()
+            {
+                warningMsg.setVisibility(View.INVISIBLE);
+            }
+        }, 5000);
     }
 
+    // TODO: move this code to separate class!!
     private boolean testInput() {
         // If any of the input fields are empty return false
         String firstName = firstNameTxt.getText().toString();
@@ -102,21 +110,43 @@ public class SignUpActivity extends AppCompatActivity {
             return false;
         }
 
-        // Test password
+        // Test password: whitespace
+        if(pass.contains(" ")){
+            displayError("No whitespace allowed in password");
+            return false;
+        }
 
+        // Test password: at least 1 uppercase letter, at least 1 number, len = 6
+        int passwordLen = 6;
+        if(pass.length() < passwordLen || pass.length() > passwordLen){
+            displayError("Password must be exactly 6 characters long");
+            return false;
+        }
+
+        if(!(pass.matches(".*\\d+.*"))) {
+            displayError("Password does not contain a number");
+            return false;
+        }
+
+        // set to false if password does not contain an uppercase letter
+        boolean hasUppercase = !pass.equals(pass.toLowerCase());
+        if(!hasUppercase){
+            displayError("Password does not contain an uppercase letter");
+            return false;
+        }
 
         return true;
     }
 
 
     private void displayText(String message) {
-        TextView textView = (TextView) findViewById(R.id.display_database);
+        final TextView textView = (TextView) findViewById(R.id.display_database);
         textView.setText(message);
+
     }
 
 
-
-    public void addRecord(String firstName, String lastName, int id, int password) {
+    public void addRecord(String firstName, String lastName, int id, String password) {
         displayText("Clicked add record!");
 
         long newId = myDb.insertRow(firstName, lastName, id, password);
@@ -152,7 +182,7 @@ public class SignUpActivity extends AppCompatActivity {
                 String firstName = cursor.getString(DBAdapter.COL_FIRSTNAME);
                 String lastName = cursor.getString(DBAdapter.COL_LASTNAME);
                 int studentNumber = cursor.getInt(DBAdapter.COL_STUDENTNUM);
-                int password = cursor.getInt(DBAdapter.COL_PASSWORD);
+                String password = cursor.getString(DBAdapter.COL_PASSWORD);
 
                 // Append data to the message:
                 message += "id=" + id
