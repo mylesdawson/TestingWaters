@@ -3,27 +3,13 @@
     android:layout_height="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.example.myles.testingwaters.AboutActivity">
+    tools:context="com.example.myles.testingwaters.GalleryActivity">
     <LinearLayout
         android:id="@+id/activity_about"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:background="@color/colorLight">
-
-        <TextView
-            android:paddingTop="24dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/about"
-            android:textSize="32sp"
-            android:textAlignment="center"/>
-
-        <TextView
-            android:padding="16dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/about_me"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -39,8 +25,7 @@
             <ImageView
                 android:layout_weight="1"
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:src="@drawable/grand_canyon" />
+                android:layout_height="150dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -57,8 +42,7 @@
                 android:layout_weight="1"
                 android:paddingTop="12dp"
                 android:layout_width="match_parent"
-                android:layout_height="165dp"
-                android:src="@drawable/tulum_mayan_ruins" />
+                android:layout_height="165dp" />
 
         </LinearLayout>
 
@@ -76,8 +60,7 @@
                 android:layout_weight="1"
                 android:paddingTop="12dp"
                 android:layout_width="match_parent"
-                android:layout_height="165dp"
-                android:src="@drawable/yellowstone_national_park" />
+                android:layout_height="165dp" />
         </LinearLayout>
 
 
@@ -96,8 +79,7 @@
                 android:layout_weight="1"
                 android:paddingTop="12dp"
                 android:layout_width="match_parent"
-                android:layout_height="165dp"
-                android:src="@drawable/kokanee_glacier_cabin" />
+                android:layout_height="165dp" />
         </LinearLayout>
 
     </LinearLayout>

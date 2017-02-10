@@ -9,39 +9,38 @@
     android:background="@color/colorLight">
 
     <EditText
-        android:id="@+id/first_name"
+        android:id="@+id/signup_first_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/first_name" />
 
     <EditText
-        android:id="@+id/last_name"
+        android:id="@+id/signup_last_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/last_name"/>
 
     <EditText
-        android:id="@+id/student_id"
+        android:id="@+id/signup_student_id"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/student_id"/>
-    
+
     <Button
+        android:id="@+id/register_btn"
         android:layout_marginTop="16dp"
         style="@style/ButtonTheme"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/sign_in"
-        android:onClick="validateLogin"/>
+        android:text="@string/register" />
 
     <TextView
-        android:paddingTop="16dp"
-        android:id="@+id/result_message"
+        android:paddingTop="16dp" android:id="@+id/result_message"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center" />
 
 
 
-
 </LinearLayout>
+

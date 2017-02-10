@@ -13,7 +13,7 @@
         android:padding="16dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/hyperlinkText"
+        android:text="@string/material_design_link"
         android:gravity="center"
         android:autoLink="web"
         android:textColor="@color/colorWhite"/>
@@ -23,7 +23,7 @@
         android:padding="16dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/hyperlinkText2"
+        android:text="@string/android_developer_link"
         android:gravity="center"
         android:autoLink="web"
         android:textColor="@color/colorWhite"/>
@@ -33,7 +33,7 @@
         android:padding="16dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/hyperlinkText3"
+        android:text="@string/stack_overflow_link"
         android:gravity="center"
         android:autoLink="web"
         android:textColor="@color/colorWhite"/>

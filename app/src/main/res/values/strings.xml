@@ -1,7 +1,8 @@
 <resources>
     <string name="app_name">TestingWaters</string>
     <string name="login">Login</string>
-    <string name="setup">Set Up</string>
+    <string name="signup">Sign Up</string>
+    <string name="register">Register</string>
     <string name="resources">Resources</string>
     <string name="hello_world">Hello World</string>
     <string name="first_name">Please enter your first name</string>
@@ -12,21 +13,39 @@
     <string name="failure">Login Failed!</string>
     <string name="save_login_info">Save Login Info</string>
     <string name="load_login_info">Load Login Info</string>
-    <string name="about">About</string>
-    <string name="about_me">Hello! I\'m Myles Dawson and welcome to the about section. I am passionate
-                            about coding, going to the gym, skiing and drinking beer. Here are some
-                            places that I have been to:
-    </string>
 
     <!--Resources used-->
-    <string name="hyperlinkText">https://material.io/guidelines/material-design/introduction.html</string>
-    <string name="hyperlinkText2">https://developer.android.com/reference/android/widget/TextView.html</string>
-    <string name="hyperlinkText3">http://stackoverflow.com/</string>
+    <string name="material_design_link">https://material.io/guidelines/material-design/introduction.html</string>
+    <string name="android_developer_link">https://developer.android.com/index.html</string>
+    <string name="stack_overflow_link">http://stackoverflow.com/</string>
+    <string name="testing_waters_icon">https://lh4.ggpht.com/80VPa2h2NIhij3wZ2gT4Ru-hrfgPnzDxuLC9P_yq3l4DusgpDtOuluC22TpfjlGfAA=w300</string>
 
     <!-- Names of locations -->
     <string name="the_grand_canyon">The Grand Canyon, Arizona</string>
     <string name="the_tulum_ruins">Tulum Ruins, Mexico</string>
     <string name="yellowstone_park">Yellowstone National Park, Wyoming</string>
     <string name="kokanee_cabin">Kokanee Glacier Cabin, BC</string>
+
+    <!-- Flow Activity -->
+    <string name="visit_gallery">Visit a Gallery</string>
+    <string name="main_menu">Main Menu</string>
+    <string name="need_help">Need Help?</string>
+
+    <!-- Help Activity -->
+    <string name="about_author">About the Author</string>
+    <string name="author_information">This app was created by Myles Dawson as a school project. App
+        features include: a simple database to save user login information, two simple games that
+        users can play once logged in, and a gallery to view some images.
+    </string>
+    <string name="website_link">https://courses.cs.sfu.ca/2017sp-cmpt-276-d1/pages/index</string>
+    <string name="game_information">Game Information</string>
+    <string name="square_game">Square Game</string>
+    <string name="triangle_game">Triangle Game</string>
+    <string name="square_game_description">In this game the user enters a number (n) less than 16. Once
+        the \'SUBMIT\' button is pressed, a grid of n x n squares will be drawn on the screen. Squares
+        along and above the diagonal will be filled with color, while the rest will be left empty
+    </string>
+    <string name="triangle_game_description">In this game</string>
+    <string name="images_and_resources">Images and Resources Used</string>
 
 </resources>

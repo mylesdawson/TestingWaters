@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_flow"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorLight"
+    tools:context="com.example.myles.testingwaters.FlowActivity">
+
+    <Button
+        android:id="@+id/gallery_btn"
+        android:layout_marginTop="16dp"
+        style="@style/ButtonTheme"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/visit_gallery" />
+
+    <Button
+        android:id="@+id/main_menu_btn"
+        android:layout_marginTop="16dp"
+        style="@style/ButtonTheme"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/main_menu" />
+
+    <Button
+        android:id="@+id/help_btn"
+        android:layout_marginTop="16dp"
+        style="@style/ButtonTheme"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/need_help" />
+
+</LinearLayout>
