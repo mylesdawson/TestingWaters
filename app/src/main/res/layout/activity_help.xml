@@ -70,5 +70,41 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/images_and_resources"/>
+
+        <TextView
+            style="@style/sources"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/material_design_link"
+            android:autoLink="web"/>
+
+        <TextView
+            style="@style/sources"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/android_developer_link"
+            android:autoLink="web"/>
+
+        <TextView
+            style="@style/sources"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/stack_overflow_link"
+            android:autoLink="web"/>
+
+        <TextView
+            style="@style/sources"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/brian_resources"
+            android:autoLink="web"/>
+
+        <TextView
+            style="@style/sources"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/testing_waters_icon"
+            android:autoLink="web"/>
+
     </LinearLayout>
 </ScrollView>

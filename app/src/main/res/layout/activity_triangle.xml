@@ -5,8 +5,39 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
-    android:background="@color/colorLight"
     android:orientation="vertical"
     tools:context="com.example.myles.testingwaters.TriangleActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:paddingRight="16dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/difficulty"/>
+
+        <Spinner
+            android:id="@+id/difficulty_spinner"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:entries="@array/difficulty_arrays">
+        </Spinner>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/begin_btn"
+        android:layout_marginTop="16dp"
+        android:background="@color/colorAccent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/begin"/>
+
+
 
 </LinearLayout>

@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 public class SignUpActivity extends AppCompatActivity {
 
-    DBAdapter myDb;
+    UserInfoDB myDb;
     Button registerBtn;
     EditText firstNameTxt;
     EditText lastNameTxt;
@@ -30,14 +30,12 @@ public class SignUpActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
 
-        registerBtn = (Button)findViewById(R.id.register_btn);
-        firstNameTxt = (EditText)findViewById(R.id.signup_first_name);
-        lastNameTxt = (EditText)findViewById(R.id.signup_last_name);
-        studentId = (EditText)findViewById(R.id.signup_student_id);
-        password = (EditText)findViewById(R.id.signup_password);
-        warningMsg = (TextView)findViewById(R.id.warning_message);
-        showDbBtn = (Button)findViewById(R.id.show_database_btn);
-        clearDbBtn = (Button)findViewById(R.id.clear_database_btn);
+        registerBtn = (Button) findViewById(R.id.register_btn);
+        firstNameTxt = (EditText) findViewById(R.id.signup_first_name);
+        lastNameTxt = (EditText) findViewById(R.id.signup_last_name);
+        studentId = (EditText) findViewById(R.id.signup_student_id);
+        password = (EditText) findViewById(R.id.signup_password);
+        warningMsg = (TextView) findViewById(R.id.warning_message);
 
         setupInterface();
         openDB();
@@ -50,15 +48,15 @@ public class SignUpActivity extends AppCompatActivity {
     }
 
     private void openDB() {
-        myDb = new DBAdapter(this);
+        myDb = new UserInfoDB(this);
         myDb.open();
     }
+
     private void closeDB() {
         myDb.close();
     }
 
     public void setupInterface() {
-
         registerBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -68,8 +66,8 @@ public class SignUpActivity extends AppCompatActivity {
                 String pass = password.getText().toString();
 
                 UserInputTester inputTester = new UserInputTester(firstName, lastName, id, pass, warningMsg);
-                if(inputTester.testInput()){
-                    Toast.makeText(getApplicationContext(),"Login info saved!", Toast.LENGTH_LONG).show();
+                if (inputTester.testInput()) {
+                    Toast.makeText(getApplicationContext(), "Login info saved!", Toast.LENGTH_LONG).show();
                     inputTester.displayError("");
                     int parseId = Integer.parseInt(id);
                     addRecord(firstName, lastName, parseId, pass);
@@ -77,52 +75,31 @@ public class SignUpActivity extends AppCompatActivity {
             }
         });
 
-        showDbBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                displayRecords();
-            }
-        });
-
-        clearDbBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                clearAll();
-            }
-        });
     }
 
-    private void displayText(String message) {
-        final TextView textView = (TextView) findViewById(R.id.display_database);
-        textView.setText(message);
-
-    }
 
     public void addRecord(String firstName, String lastName, int id, String password) {
-        displayText("Clicked add record!");
-
+        Toast.makeText(this, "Signed up!", Toast.LENGTH_SHORT).show();
         long newId = myDb.insertRow(firstName, lastName, id, password);
 
-        // Query for the record we just added.
-        // Use the ID:
         Cursor cursor = myDb.getRow(newId);
-        displayRecordSet(cursor);
+        //displayRecordSet(cursor);
     }
 
-    public void clearAll() {
+    /*public void clearAll() {
         displayText("Clicked clear all!");
         myDb.deleteAll();
-    }
+    }*/
 
-    public void displayRecords() {
+   /* public void displayRecords() {
         displayText("Clicked display record!");
 
         Cursor cursor = myDb.getAllRows();
-        displayRecordSet(cursor);
-    }
+        //displayRecordSet(cursor);
+    }*/
 
     // Display an entire recordset to the screen.
-    private void displayRecordSet(Cursor cursor) {
+    /*private void displayRecordSet(Cursor cursor) {
         String message = "";
         // populate the message from the cursor
 
@@ -130,25 +107,23 @@ public class SignUpActivity extends AppCompatActivity {
         if (cursor.moveToFirst()) {
             do {
                 // Process the data:
-                int id = cursor.getInt(DBAdapter.COL_ROWID);
-                String firstName = cursor.getString(DBAdapter.COL_FIRSTNAME);
-                String lastName = cursor.getString(DBAdapter.COL_LASTNAME);
-                int studentNumber = cursor.getInt(DBAdapter.COL_STUDENTNUM);
-                String password = cursor.getString(DBAdapter.COL_PASSWORD);
+                int id = cursor.getInt(UserInfoDB.COL_ROWID);
+                String firstName = cursor.getString(UserInfoDB.COL_FIRSTNAME);
+                String lastName = cursor.getString(UserInfoDB.COL_LASTNAME);
+                int studentNumber = cursor.getInt(UserInfoDB.COL_STUDENTNUM);
+                String password = cursor.getString(UserInfoDB.COL_PASSWORD);
 
                 // Append data to the message:
                 message += "id=" + id
-                        +", first name=" + firstName
-                        +", last name=" + lastName
-                        +", #=" + studentNumber
-                        +", password=" + password
-                        +"\n";
-            } while(cursor.moveToNext());
+                        + ", first name=" + firstName
+                        + ", last name=" + lastName
+                        + ", #=" + studentNumber
+                        + ", password=" + password
+                        + "\n";
+            } while (cursor.moveToNext());
         }
-
         // Close the cursor to avoid a resource leak.
         cursor.close();
-
         displayText(message);
-    }
+    }*/
 }

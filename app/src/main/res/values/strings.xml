@@ -19,6 +19,7 @@
     <string name="android_developer_link">https://developer.android.com/index.html</string>
     <string name="stack_overflow_link">http://stackoverflow.com/</string>
     <string name="testing_waters_icon">https://lh4.ggpht.com/80VPa2h2NIhij3wZ2gT4Ru-hrfgPnzDxuLC9P_yq3l4DusgpDtOuluC22TpfjlGfAA=w300</string>
+    <string name="brian_resources">https://www.cs.sfu.ca/CourseCentral/276/bfraser/videolist.html</string>
 
     <!-- Names of locations -->
     <string name="the_grand_canyon">The Grand Canyon, Arizona</string>
@@ -45,7 +46,9 @@
         the \'SUBMIT\' button is pressed, a grid of n x n squares will be drawn on the screen. Squares
         along and above the diagonal will be filled with color, while the rest will be left empty
     </string>
-    <string name="triangle_game_description">In this game</string>
+    <string name="triangle_game_description">In this game the user enters a difficulty level to play. Once
+        confirmed triangles will appear on screen and start moving away from the center. The number of triangles
+        depends on the difficulty level. The goal is to tap on all the triangles before they disappear</string>
     <string name="images_and_resources">Images and Resources Used</string>
 
     <!-- Menu Activity -->
@@ -58,6 +61,15 @@
 
     <!-- Signup Activity-->
     <string name="please_enter_your_password">Please enter your password</string>
+
+    <!-- Triangle Activity -->
+    <string-array name="difficulty_arrays">
+        <item>Easy</item>
+        <item>Medium</item>
+        <item>Hard</item>
+    </string-array>
+    <string name="difficulty">Choose your difficulty level:</string>
+    <string name="begin">Begin!</string>
 
 
 </resources>

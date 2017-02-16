@@ -15,20 +15,20 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SetupActivity" />
-        <activity android:name=".ResourceActivity" />
         <activity android:name=".LoginActivity"
             android:parentActivityName=".EntryActivity"
             android:label="Login"/>
-        <activity android:name=".GalleryActivity"
+        <activity android:name=".GalleryActivity">
             android:parentActivityName=".FlowActivity"
-            android:label="Gallery"/>
+            android:label="Gallery"
+        </activity>
         <activity android:name=".SignUpActivity"
             android:parentActivityName=".EntryActivity"
             android:label="Sign Up"/>
-        <activity android:name=".FlowActivity"
+        <activity android:name=".FlowActivity">
             android:parentActivityName=".LoginActivity"
             android:label="Flow"/>
+        </activity>
         <activity android:name=".HelpActivity"
             android:parentActivityName=".FlowActivity"
             android:label="Help"/>
@@ -37,10 +37,12 @@
             android:label="Game Menu"/>
         <activity android:name=".SquareActivity"
             android:parentActivityName=".MenuActivity"
-            android:label="Square Game"/>
+            android:label="Square Game"
+            android:screenOrientation="landscape"/>
         <activity android:name=".TriangleActivity"
             android:parentActivityName=".MenuActivity"
-            android:label="Triangle Game"/>
+            android:label="Triangle Game"
+            android:screenOrientation="landscape"/>
     </application>
 
 </manifest>
